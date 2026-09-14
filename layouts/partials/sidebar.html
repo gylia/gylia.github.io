@@ -1,7 +1,12 @@
 {{ $p := .Site.Params }}
 <aside class="sidebar">
-  {{ with $p.headshot }}
-  <img class="portrait" src="{{ . }}" alt="Portrait of {{ $p.author }}" width="148" height="148">
+  {{ with resources.Get "images/portrait.jpeg" }}
+    {{ $sm := .Fill "296x296 Center" }}
+    {{ $wp := $sm.Resize "296x296 webp q82" }}
+    <picture>
+      <source srcset="{{ $wp.RelPermalink }}" type="image/webp">
+      <img class="portrait" src="{{ $sm.RelPermalink }}" alt="Portrait of {{ $p.author }}" width="148" height="148" fetchpriority="high">
+    </picture>
   {{ end }}
 
   <p class="name"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></p>

@@ -12,11 +12,13 @@
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
-{{ with .Site.Params.headshot }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ with resources.Get "images/portrait.jpeg" }}{{ $og := .Fill "600x600 Center" }}
+<meta property="og:image" content="{{ $og.Permalink }}">
+<meta property="og:image:width" content="600"><meta property="og:image:height" content="600">{{ end }}
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{{ .Site.Params.headshot }}">
+{{ with resources.Get "images/portrait.jpeg" }}<link rel="apple-touch-icon" href="{{ (.Fill "180x180 Center").RelPermalink }}">{{ end }}
 {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">{{ end }}
 {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 {{ end }}
