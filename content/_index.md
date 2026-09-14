@@ -9,8 +9,8 @@ Prof. [Jia Deng](https://pvl.cs.princeton.edu/), Prof. [Zhuang Liu](https://liuz
 Prof. [Marc Aurèle Gilles](https://ma-gilles.github.io/), and Prof. [Boris Hanin](https://boris-hanin.github.io/).
 
 My research spans **embodied intelligence and multimodal learning**. I have worked on robotic
-manipulation, tactile sensing, and sim-to-real transfer — including physical simulation and synthetic
-data generation — as well as reasoning evaluation in vision–language models. I have also explored
+manipulation, tactile sensing, and sim-to-real transfer (including physical simulation and synthetic
+data generation), as well as reasoning evaluation in vision–language models. I have also explored
 theoretical machine learning: critical batch size and scaling laws, statistical inference, and
 spectral methods for high-dimensional learning.
 
@@ -25,18 +25,18 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Embodied intelligence</h3>
-    <p>Architectures carry over from language and vision; the supply of experience does not. I am most interested in where interaction data comes from, what makes some of it worth more than the rest, and which learning signals turn it into competence that survives outside the training distribution.</p>
+    <p>Architectures carry over from language and vision. Experience does not. I work on where interaction data comes from, and what makes some of it worth more.</p>
   </div>
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>Vision underdetermines contact: force, slip, and compliance become legible only through touch. An agent that acts on the physical world needs senses that report what contact does, not only what it looks like.</p>
+    <p>Vision underdetermines contact. Force, slip and compliance are legible only through touch.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
-    <p>Real interaction data is bounded by how many hours a robot can spend touching things. Simulation lifts that bound, which turns the question into which properties of generated data actually transfer — physical fidelity, the distribution over contact events, sheer diversity — rather than how much of it there is.</p>
+    <p>Real data is capped by how long a robot can spend touching things. Simulation lifts the cap. The question is then which generated properties actually transfer.</p>
   </div>
   <div class="card">
     <h3>Theory of deep learning</h3>
-    <p>Scaling is mostly navigated by search: batch sizes and budgets are found empirically and passed along as folklore. Some of it has analyzable structure — critical batch size, spectral behaviour in high dimensions — and I am drawn to the parts that can be predicted rather than tuned.</p>
+    <p>Scaling is navigated by search and folklore. Some of it has structure: critical batch size, spectral behaviour in high dimensions. I want the predictable parts.</p>
   </div>
 </div>

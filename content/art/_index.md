@@ -20,10 +20,10 @@ an improvised idiom in the same week changes what you hear in all three.
 
 ## Writing
 
-I write **poetry** and **theatrical reviews** — the latter mostly as a way of paying close attention
+I write **poetry** and **theatrical reviews**, the latter mostly as a way of paying close attention
 to a performance twice: once while watching, once while trying to say what happened.
 
 ## Selected work
 
 <p class="note">Recordings and selected poems go here. Each one can be a short title, a line or two of
-context, and a link — an audio file, a YouTube or Bilibili embed, or a PDF.</p>
+context, and a link: an audio file, a YouTube or Bilibili embed, or a PDF.</p>

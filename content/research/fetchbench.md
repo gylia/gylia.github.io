@@ -9,7 +9,7 @@ authors_after = ", Jia Deng"
 paper = "https://arxiv.org/abs/2406.11793"
 code = "https://github.com/princeton-vl/FetchBench-CORL2024"
 website = ""
-tldr = "A simulation benchmark for robot fetching — reaching into cluttered scenes and retrieving a target object — designed to evaluate manipulation systems end to end."
+tldr = "A simulation benchmark for robot fetching: reaching into cluttered scenes and retrieving a target object, evaluated end to end."
 +++
 
 A simulation benchmark for robot fetching: locating a target object in a cluttered scene, planning a
