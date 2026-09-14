@@ -25,7 +25,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>Whether a grasp holds depends on friction, contact area and how force distributes across the fingers. A camera measures none of these. Touch is not context for vision, it observes what decides the outcome.</p>
+    <p>Touch is not optional for perceiving and acting in a complex physical world. What to sense, how to collect it, and how to use it are all underexplored, as is what makes two modalities worth more together than apart.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
