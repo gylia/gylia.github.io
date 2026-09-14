@@ -80,8 +80,8 @@ See the [research page](/research/) for the full list with figures and write-ups
 <div class="entry">
   <div class="when">2026</div>
   <div class="what">
-    <strong>Elected to Sigma Xi</strong>
-    <div class="where">Princeton University</div>
+    <strong>Elected member, Sigma Xi</strong>
+    <div class="where">The Scientific Research Honor Society, elected by the Princeton chapter</div>
   </div>
 </div>
 
