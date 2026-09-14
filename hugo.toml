@@ -52,8 +52,6 @@ enableEmoji = true
   headshot = "/images/headshot_7.jpeg"
   location = "Ann Arbor, Michigan"
   email = "gluyang@umich.edu"
-  # Drop your CV at static/cv.pdf and this link goes live automatically.
-  cv = "/cv.pdf"
   github = "https://github.com/gylia"
   scholar = "https://scholar.google.com/citations?user=4XWyA_cAAAAJ&hl=en"
   # Optional: add your handles to show these links.

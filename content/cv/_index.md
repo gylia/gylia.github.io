@@ -4,8 +4,6 @@ date = 2026-09-13
 description = "Education, research, publications, and service."
 +++
 
-{{< cvlink >}}
-
 ## Education
 
 <div class="entry">

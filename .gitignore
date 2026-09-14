@@ -5,5 +5,4 @@ resources/
 .idea/
 
 # Local paper drafts at the repo root, never published.
-# Files under static/ (e.g. static/cv.pdf) are deliberately NOT ignored.
 /*.pdf
