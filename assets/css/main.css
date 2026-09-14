@@ -72,7 +72,7 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 
 /* ---------- layout ---------- */
 .wrap {
-  max-width: 62rem;
+  max-width: 69rem;
   margin: 0 auto;
   padding: 3.2rem 1.6rem 4rem;
   display: grid;
@@ -122,7 +122,11 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 .theme-toggle:hover { color: var(--accent); }
 
 /* ---------- prose ---------- */
-.prose { max-width: var(--measure); }
+.prose { max-width: none; }
+/* Cap running text at a readable measure, but let blocks use the full column. */
+.prose > p, .prose > ul, .prose > ol, .prose > blockquote, .prose > h1, .prose > h2, .prose > h3 {
+  max-width: var(--measure);
+}
 .prose > h2:first-child, .prose > h1:first-child { margin-top: 0; }
 .lede { font-size: 1.05rem; }
 
@@ -143,7 +147,7 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 
 /* ---------- publications ---------- */
 .pub { padding: 1.15rem 0; border-bottom: 1px solid var(--rule); }
-.pub.has-thumb { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.3rem; align-items: start; }
+.pub.has-thumb { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 1.4rem; align-items: start; }
 .pub-thumb { display: block; border-radius: 5px; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
 .pub-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; }
 .pub-thumb:hover { border-color: var(--accent); }
