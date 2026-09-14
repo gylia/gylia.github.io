@@ -28,7 +28,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
     <p>Touch is integral to perceiving and acting in a complex physical world. What to sense, how to collect it, and how to represent it remain underexplored, as does what makes multiple modalities worth more together than apart.</p>
   </div>
   <div class="card">
-    <h3>Sim-to-real &amp; synthetic data</h3>
-    <p>Real interaction data does not scale, so the question becomes what to generate rather than how much of it. I work on which properties of a generating process govern transfer, in particular physical fidelity at contact and coverage of the interaction distribution.</p>
+    <h3>Data for embodied learning</h3>
+    <p>Language and vision inherited a data paradigm from the web. Embodied learning has no equivalent. What counts as good interaction data, how simulation and real collection divide the work, and how to build a flywheel where deployment feeds the next training set, are all open.</p>
   </div>
 </div>
