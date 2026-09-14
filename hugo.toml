@@ -54,6 +54,8 @@ enableEmoji = true
   email_user = "gluyang"
   email_domain = "umich.edu"
   github = "https://github.com/gylia"
+  # Search Console verification token (HTML tag method).
+  google_site_verification = "-To3nQ6ewtV9ELPdFODhK3IB4pZraUs0lW_1jbaVVHw"
   scholar = "https://scholar.google.com/citations?user=4XWyA_cAAAAJ&hl=en"
   # Optional: add your handles to show these links.
   linkedin = ""

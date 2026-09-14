@@ -6,6 +6,7 @@
 <meta name="description" content="{{ $desc }}">
 <meta name="author" content="{{ .Site.Params.author }}">
 <link rel="canonical" href="{{ .Permalink }}">
+{{ with .Site.Params.google_site_verification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 
 <meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
 <meta property="og:title" content="{{ $title }}">
