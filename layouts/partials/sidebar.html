@@ -36,7 +36,7 @@
   </nav>
 
   <div class="links">
-    {{ if $p.email_user }}<a class="js-email" data-u="{{ $p.email_user }}" data-d="{{ $p.email_domain }}" href="#">Email</a>{{ end }}
+    {{ if $p.email_user }}<a class="js-email" data-u="{{ $p.email_user }}" data-d="{{ $p.email_domain }}" href="#">Email</a><noscript><span class="nojs-email">{{ $p.email_user }} [at] {{ $p.email_domain }}</span></noscript>{{ end }}
     {{ with $p.scholar }}<a href="{{ . }}" rel="me noopener">Scholar</a>{{ end }}
     {{ with $p.github }}<a href="{{ . }}" rel="me noopener">GitHub</a>{{ end }}
     {{ with $p.linkedin }}<a href="{{ . }}" rel="me noopener">LinkedIn</a>{{ end }}

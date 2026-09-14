@@ -204,6 +204,8 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 .prose table tr:last-child td { border-bottom: 0; }
 .table-scroll, .prose > div:has(> table) { overflow-x: auto; }
 
+.nojs-email { font-size: .8rem; color: var(--muted); }
+
 /* ---------- notes ---------- */
 .note {
   font-size: .87rem; color: var(--muted); background: var(--surface);
