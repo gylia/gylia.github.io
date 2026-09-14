@@ -1,0 +1,44 @@
+{{ $p := .Site.Params }}
+<aside class="sidebar">
+  {{ with $p.headshot }}
+  <img class="portrait" src="{{ . }}" alt="Portrait of {{ $p.author }}" width="148" height="148">
+  {{ end }}
+
+  <p class="name"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></p>
+  {{ with .Site.Params.subtitle }}<p class="alt-name">{{ . }}</p>{{ end }}
+  {{ with .Site.Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
+  <p class="affil">
+    CSE, University of Michigan<br>
+    {{ with $p.location }}{{ . }}{{ end }}
+  </p>
+
+  <nav class="site-nav" aria-label="Main">
+    {{ $cur := .RelPermalink }}
+    {{ range .Site.Menus.main }}
+      {{ $active := or (eq $cur .URL) (and (ne .URL "/") (hasPrefix $cur .URL)) }}
+      <a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+
+  <div class="links">
+    {{ with $p.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
+    {{ if fileExists "static/cv.pdf" }}<a href="{{ $p.cv }}">CV&nbsp;(PDF)</a>{{ end }}
+    <a href="/cv/">CV</a>
+    {{ with $p.scholar }}<a href="{{ . }}" rel="me noopener">Scholar</a>{{ end }}
+    {{ with $p.github }}<a href="{{ . }}" rel="me noopener">GitHub</a>{{ end }}
+    {{ with $p.linkedin }}<a href="{{ . }}" rel="me noopener">LinkedIn</a>{{ end }}
+    {{ with $p.twitter }}<a href="{{ . }}" rel="me noopener">X</a>{{ end }}
+  </div>
+
+  <div class="sidebar-foot">
+    <button class="theme-toggle" type="button" aria-label="Toggle colour theme">◐ Theme</button>
+    {{ with .AllTranslations }}
+      {{ if gt (len .) 1 }}
+        <div style="margin-bottom:.4rem">
+        {{ range . }}{{ if ne .Language.Lang $.Language.Lang }}<a href="{{ .RelPermalink }}">{{ if eq .Language.Lang "zh" }}中文{{ else }}English{{ end }}</a>{{ end }}{{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+    © {{ now.Format "2006" }} {{ .Site.Params.author }}
+  </div>
+</aside>

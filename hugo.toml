@@ -1,0 +1,66 @@
+baseURL = "https://gylia.github.io/"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableEmoji = true
+
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    title = "Gan Luyang"
+    weight = 1
+    [languages.en.params]
+      subtitle = "甘鹿扬"
+      description = "Graduate student in CSE at the University of Michigan, working on embodied intelligence and multimodal learning."
+      tagline = "Embodied intelligence & multimodal learning"
+
+  [languages.zh]
+    languageCode = "zh-cn"
+    title = "甘鹿扬"
+    weight = 2
+    [languages.zh.params]
+      subtitle = "Gan Luyang"
+      description = "密歇根大学计算机科学与工程系研究生，研究方向为具身智能与多模态学习。"
+      tagline = "具身智能与多模态学习"
+
+
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "/"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "Arts & Aesthetics"
+    url = "/art/"
+    weight = 3
+  [[languages.en.menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 4
+
+[languages.zh.menu]
+  [[languages.zh.menu.main]]
+    name = "关于"
+    url = "/zh/"
+    weight = 1
+
+[params]
+  author = "Gan Luyang"
+  headshot = "/images/headshot_7.jpeg"
+  location = "Ann Arbor, Michigan"
+  email = "gluyang@umich.edu"
+  # Drop your CV at static/cv.pdf and this link goes live automatically.
+  cv = "/cv.pdf"
+  github = "https://github.com/gylia"
+  scholar = "https://scholar.google.com/citations?user=4XWyA_cAAAAJ&hl=en"
+  # Optional: add your handles to show these links.
+  linkedin = ""
+  twitter = ""
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]

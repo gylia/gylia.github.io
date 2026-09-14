@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="prose">
+  {{ .Content }}
+</div>
+
+{{ $pubs := where .Site.RegularPages "Section" "research" }}
+{{ if $pubs }}
+<div class="section-head">
+  <h2>Publications</h2>
+  <a class="more" href="/research/">All research →</a>
+</div>
+<div class="publications">
+  {{ range $pubs.ByDate.Reverse }}{{ partial "publication.html" . }}{{ end }}
+</div>
+{{ end }}
+
+{{ with hugo.Data.news }}
+<div class="section-head"><h2>News</h2></div>
+<ul class="news">
+  {{ range first 6 . }}
+  <li><span class="when">{{ .date }}</span><span class="what">{{ .text | safeHTML }}</span></li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ with hugo.Data.service }}
+<div class="section-head"><h2>Service &amp; Activities</h2></div>
+{{ range . }}
+<div class="entry">
+  <div class="when">{{ .when }}</div>
+  <div class="what">
+    <strong>{{ .what }}</strong>
+    {{ with .where }}<div class="where">{{ . }}</div>{{ end }}
+    {{ with .detail }}<p class="detail">{{ . | safeHTML }}</p>{{ end }}
+  </div>
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

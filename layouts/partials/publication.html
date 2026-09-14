@@ -1,0 +1,23 @@
+<div class="pub">
+  <p class="pub-title">
+    {{ $link := or .Params.paper .Params.website .Params.code }}
+    {{ if $link }}<a href="{{ $link }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}
+  </p>
+  <p class="pub-authors">
+    {{- with .Params.authors_before }}{{ . }}{{ end -}}
+    <span class="me">{{ .Params.authors_self }}</span>
+    {{- with .Params.authors_after }}{{ . }}{{ end -}}
+  </p>
+  <p class="pub-meta">
+    {{ with .Params.venue }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Preprint</span>{{ end }}
+    {{ with .Params.venue_note }} · {{ . }}{{ end }}
+    {{ $y := .Date.Format "2006" }}{{ if not (strings.Contains (string .Params.venue) $y) }} · {{ $y }}{{ end }}
+  </p>
+  <p class="pub-links">
+    {{ with .Params.paper }}<a href="{{ . }}">Paper</a>{{ end }}
+    {{ with .Params.code }}<a href="{{ . }}">Code</a>{{ end }}
+    {{ with .Params.website }}<a href="{{ . }}">Project page</a>{{ end }}
+    {{ with .Params.bibtex }}<a href="{{ . }}">BibTeX</a>{{ end }}
+  </p>
+  {{ with .Params.tldr }}<p class="pub-abstract">{{ . }}</p>{{ end }}
+</div>
