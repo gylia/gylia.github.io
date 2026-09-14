@@ -190,6 +190,14 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0 0; padding: 0; list-style: none; }
 .tags li { font-size: .78rem; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: .15rem .6rem; }
 
+/* ---------- tables ---------- */
+.prose table { border-collapse: collapse; font-size: .92rem; margin: 1.3rem 0; min-width: 22rem; }
+.prose table th, .prose table td { text-align: left; padding: .45rem .95rem .45rem 0; border-bottom: 1px solid var(--rule); }
+.prose table th { font-weight: 600; color: var(--muted); font-size: .82rem; letter-spacing: .02em; }
+.prose table td:last-child, .prose table th:last-child { text-align: right; padding-right: 0; font-variant-numeric: tabular-nums; }
+.prose table tr:last-child td { border-bottom: 0; }
+.table-scroll, .prose > div:has(> table) { overflow-x: auto; }
+
 /* ---------- notes ---------- */
 .note {
   font-size: .87rem; color: var(--muted); background: var(--surface);

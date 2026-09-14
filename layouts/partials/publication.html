@@ -4,7 +4,7 @@
   {{ with $img }}
     {{ $t := .Fit "440x360 jpg q86" }}
     {{ $t2 := .Fit "880x720 jpg q84" }}
-    {{ $link := or $.Params.website $.Params.paper $.RelPermalink }}
+    {{ $link := $.RelPermalink }}
     <a class="pub-thumb" href="{{ $link }}">
       <img src="{{ $t.RelPermalink }}" srcset="{{ $t.RelPermalink }} 1x, {{ $t2.RelPermalink }} 2x"
            alt="Figure from {{ $.Title }}" loading="lazy">
@@ -12,8 +12,7 @@
   {{ end }}
   <div class="pub-body">
     <p class="pub-title">
-      {{ $l := or .Params.paper .Params.website .Params.code }}
-      {{ if $l }}<a href="{{ $l }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </p>
     <p class="pub-authors">
       {{- with .Params.authors_before }}{{ . }}{{ end -}}
