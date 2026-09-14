@@ -1,0 +1,32 @@
+<aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="/images/headshot_7.jpeg"
+           alt="Gan Luyang"
+           style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <p class="lead">
+        {{ with .Site.Params.description }} {{.}} {{ else }}...{{end}}
+      </p>
+    </div>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+        {{ range .Site.Menus.main -}}
+        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+        {{- end }}
+      </ul>
+    </nav>
+
+    <!-- Language toggle -->
+    <div style="margin-top: 1rem;">
+      {{ if eq .Site.Language.Lang "en" }}
+        <a href="/zh{{ .RelPermalink }}" style="color: inherit; opacity: 0.7; font-size: 0.85rem;">中文</a>
+      {{ else }}
+        <a href="{{ .RelPermalink | strings.TrimPrefix "/zh" }}" style="color: inherit; opacity: 0.7; font-size: 0.85rem;">English</a>
+      {{ end }}
+    </div>
+
+    <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}. All rights reserved. {{end}}</p>
+  </div>
+</aside>
