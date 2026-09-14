@@ -9,13 +9,13 @@ separate lives. Both are attempts to find structure in something that resists it
 
 ## Music
 
-I perform on **piano**, **violin**, **erhu**, and **bamboo flute**, and I sing **Peking opera** and
-**jazz**. I also dance. Moving between a Western classical instrument, a Chinese traditional one, and
+I perform on **piano**, **violin**, **erhu**, **bamboo flute** and **guitar**, I sing **Peking opera**
+and **jazz**, and I write my own songs. I also dance. Moving between a Western classical instrument, a Chinese traditional one, and
 an improvised idiom in the same week changes what you hear in all three.
 
 <ul class="tags">
-  <li>Piano</li><li>Violin</li><li>Erhu 二胡</li><li>Bamboo flute 竹笛</li>
-  <li>Peking opera 京剧</li><li>Jazz vocals</li><li>Dance</li>
+  <li>Piano</li><li>Violin</li><li>Erhu 二胡</li><li>Bamboo flute 竹笛</li><li>Guitar</li>
+  <li>Peking opera 京剧</li><li>Jazz vocals</li><li>Songwriting</li><li>Dance</li>
 </ul>
 
 ## Writing
