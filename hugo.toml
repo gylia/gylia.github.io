@@ -49,7 +49,6 @@ enableEmoji = true
 
 [params]
   author = "Gan Luyang"
-  headshot = "/images/headshot_7.jpeg"
   location = "Ann Arbor, Michigan"
   # Split so the address never appears intact in the rendered HTML.
   email_user = "gluyang"

@@ -37,17 +37,20 @@
 
 {{ if .IsHome }}
 <script type="application/ld+json">
+{{ $portrait := "" }}
+{{ with resources.Get "images/portrait.jpeg" }}{{ $portrait = (.Fill "600x600 Center").Permalink }}{{ end }}
 {{ dict
   "@context" "https://schema.org"
   "@type" "Person"
   "name" .Site.Params.author
+  "alternateName" (slice "Luyang Gan" "甘鹿扬" "Gan, Luyang")
   "url" .Site.BaseURL
-  "image" (.Site.Params.headshot | absURL)
+  "image" $portrait
   "jobTitle" "Graduate Student, Computer Science and Engineering"
   "affiliation" (dict "@type" "CollegeOrUniversity" "name" "University of Michigan")
   "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "Princeton University")
   "sameAs" (slice .Site.Params.scholar .Site.Params.github)
-  | jsonify (dict "indent" "  ")
+  | jsonify (dict "indent" "  ") | safeJS
 }}
 </script>
 {{ end }}
