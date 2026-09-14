@@ -16,7 +16,7 @@ description = "Education, research, publications, and service."
   </div>
 </div>
 <div class="entry">
-  <div class="when">– 2026</div>
+  <div class="when">2022 – 2026</div>
   <div class="what">
     <strong>Princeton University</strong>
     <div class="where">B.A. in Mathematics, minor in Computer Science</div>
