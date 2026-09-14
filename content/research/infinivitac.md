@@ -7,9 +7,12 @@ authors_before = "Beining Han*, "
 authors_self = "Gan Luyang*"
 authors_after = ", Derek Geng, Abhishek Joshi, Jia Deng"
 venue_note = "* equal contribution"
-paper = "https://openreview.net/pdf?id=2Pv41Ey3jK"
+paper = ""
 code = ""
 website = ""
+image = "images/papers/vitac.png"
+thumb = "images/papers/vitac_thumb.png"
+image_caption = "Paired visual and tactile observations for grasps that held and grasps that failed."
 tldr = "Predicting whether a grasp will hold, from vision and touch together, trained on synthetic data so that it generalizes to objects never seen during training."
 +++
 
