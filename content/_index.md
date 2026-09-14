@@ -7,8 +7,8 @@ I am a first-year graduate student in **Computer Science and Engineering at the 
 I received my **B.A. in Mathematics from Princeton University**, where I was fortunate to work with
 Prof. [Jia Deng](https://pvl.cs.princeton.edu/), Prof. [Zhuang Liu](https://liuzhuang13.github.io/),
 Prof. [Marc Aurèle Gilles](https://ma-gilles.github.io/), and Prof. [Boris Hanin](https://boris-hanin.github.io/).
-I was also fortunate to learn from Prof. [Charles Fefferman](https://www.math.princeton.edu/people/charles-fefferman)
-and Prof. [Amit Singer](https://amitsinger.princeton.edu/), who greatly changed how I understand mathematics
+I was also fortunate to learn from Prof. [Charles Fefferman](https://en.wikipedia.org/wiki/Charles_Fefferman)
+and Prof. [Amit Singer](https://web.math.princeton.edu/~amits/), who greatly changed how I understand mathematics
 and academic work.
 
 My research spans **embodied intelligence and multimodal learning**. I have worked on robotic
