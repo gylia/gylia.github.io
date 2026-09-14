@@ -25,10 +25,10 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>Touch is not optional for perceiving and acting in a complex physical world. What to sense, how to collect it, and how to use it are all underexplored, as is what makes two modalities worth more together than apart.</p>
+    <p>Touch is integral to perceiving and acting in a complex physical world. What to sense, how to collect it, and how to represent it remain underexplored, as does what makes multiple modalities worth more together than apart.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
-    <p>Real data is capped by how long a robot can spend touching things. Simulation lifts the cap. The question is then which generated properties actually transfer.</p>
+    <p>Real interaction data does not scale, so the question becomes what to generate rather than how much of it. I work on which properties of a generating process govern transfer, in particular physical fidelity at contact and coverage of the interaction distribution.</p>
   </div>
 </div>
