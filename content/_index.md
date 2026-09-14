@@ -20,13 +20,14 @@ opera, jazz vocals, and dance. I write poetry and theatrical reviews.
 I am currently looking for **research internships in embodied AI and multimodal learning**.
 The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 
-## Research interests
+## Embodied intelligence
+
+Recipes from language and vision do not transfer cleanly to acting in the world. What
+should an agent learn from, and what makes one stream of experience worth
+more than another? What has to be sensed rather than inferred? How much of acting in the world can
+be learned from data that was never collected in it?
 
 <div class="cards">
-  <div class="card">
-    <h3>Embodied intelligence</h3>
-    <p>Recipes from language and vision do not transfer cleanly to acting in the world. I work on both halves of that gap: where interaction data comes from, and the models that learn from it.</p>
-  </div>
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
     <p>A person without sight navigates by touch. A person without touch barely moves. Contact is where manipulation is decided, and vision only guesses at it.</p>
@@ -34,9 +35,5 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
     <p>Real data is capped by how long a robot can spend touching things. Simulation lifts the cap. The question is then which generated properties actually transfer.</p>
-  </div>
-  <div class="card">
-    <h3>Theory of deep learning</h3>
-    <p>Scaling is navigated by search and folklore. Some of it has structure: critical batch size, spectral behaviour in high dimensions. I want the predictable parts.</p>
   </div>
 </div>
