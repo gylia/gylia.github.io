@@ -20,7 +20,9 @@ opera, jazz vocals, and dance. I write poetry and theatrical reviews.
 I am currently looking for **research internships in embodied AI and multimodal learning**.
 The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 
-## Embodied intelligence
+## Research interests
+
+### Embodied intelligence
 
 Recipes from language and vision do not transfer cleanly to acting in the world. What
 should an agent learn from, and what makes one stream of experience worth
