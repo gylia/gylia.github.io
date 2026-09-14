@@ -25,7 +25,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>A person without sight navigates by touch. A person without touch barely moves. Contact is where manipulation is decided, and vision only guesses at it.</p>
+    <p>Whether a grasp holds depends on friction, contact area and how force distributes across the fingers. A camera measures none of these. Touch is not context for vision, it observes what decides the outcome.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
