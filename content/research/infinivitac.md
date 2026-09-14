@@ -15,68 +15,65 @@ image_caption = "Left two columns: grasps that held. Right two columns: grasps t
 tldr = "Grasp stability from vision and touch, trained on FEM-simulated data that beats both real data and rigid-body simulation on unseen objects."
 +++
 
-A model trained on a large real-world visual-tactile dataset scores **53%** at predicting whether a
-grasp will hold on objects it has not seen before. Coin-flip territory. Train the same model on data
-we generated in simulation and it scores **77.5%**.
-
-That gap is the whole project. Real data is supposed to be the gold standard, and here it loses badly
-to synthetic data. This page is about why, and what had to be true of the simulator for it to happen.
+A model trained on a large real-world visual-tactile dataset predicts grasp success on unfamiliar
+objects at **53%**, which is a coin flip. Trained on data we generated in simulation, the same model
+reaches **77.5%**. Real data is supposed to be the gold standard, and the reason it loses here is not
+that there was too little of it.
 
 ## Background, and the questions
 
-A robot about to lift something would like to know whether its grip will hold. Vision alone is a poor
-judge of this: whether an object slips depends on friction, contact area and how force is distributed
-across the fingers, none of which a camera sees. Tactile sensors do see it. The common setup uses a
-GelSight-style sensor, a soft gel behind a camera that images its own deformation when pressed
-against an object.
+Whether a grip holds is settled by friction, contact area, and how force distributes across the
+fingers. A camera sees none of these, which is why grasp stability is normally predicted with a
+tactile sensor: a GelSight-style soft gel behind a camera, imaging its own deformation as it presses
+against the object.
 
-The catch is data. Visual-tactile datasets are collected by hand, and each one is locked to a single
-gripper, a fixed camera position, one sensor type and a small set of objects. That is fine for
-predicting grasps on the objects in the lab. It is hopeless for the open-world case, where the
-predictor has to work zero-shot on an unfamiliar object in an unfamiliar place. You cannot collect
-your way out of it.
+Those sensors are also what makes the data hard to come by. Visual-tactile datasets are collected by
+hand, and each one ends up bound to a single gripper, a fixed camera position, one sensor model and a
+modest set of objects. A predictor trained on such a dataset inherits every one of those constraints.
+For the open-world case, where the object and the room are both unfamiliar, no feasible amount of
+further collection undoes that.
 
-So: generate the data instead. Which raises three questions.
+Generating the data instead raises three questions.
 
-1. **Can a simulator be made physically faithful enough that its grasp outcomes match reality?**
-   Grasp stability is decided by contact mechanics, the hardest thing for a simulator to get right.
-2. **Does training on synthetic data actually beat training on real data** when the test set is
-   open-world?
-3. **Is touch pulling its weight**, or would vision alone have done just as well?
+1. **Can a simulator be faithful enough that its grasp outcomes match reality?** Contact mechanics is
+   the hardest thing for a simulator to get right, and it is precisely what the label depends on.
+2. **Does training on synthetic data beat training on real data** once the test set is open-world?
+3. **Is touch earning its place**, or would vision alone have done as well?
 
-## What we built
+## The generator
 
-A synthetic data generator that simulates grasping with FEM rather than rigid bodies. The deformable
-gel of the tactile sensor is a tetrahedral FEM body pressed against the object, so gel deformation is
-computed rather than approximated, and tactile images come from ray-traced rendering of that
-deformation.
+Grasping is simulated with FEM rather than rigid bodies. The deformable gel is a tetrahedral FEM body
+pressed against the object, so its deformation is computed rather than approximated, and the tactile
+image is a ray-traced render of that deformation.
 
-Grasping runs in three stages, because a grasp is a process rather than an instant: finger closure at
-a set velocity, force adjustment until contact force reaches a stopping threshold, then lift. This is
-what produces the steady grasping force that real grasps have.
+A grasp is treated as a process rather than an instant: fingers close at a set velocity, force is
+adjusted until contact reaches a stopping threshold, then the gripper lifts. That is what produces the
+steady grasping force a real grasp has, and what makes the simulated outcome meaningful at all.
 
-The resulting dataset is over **30,000 visual-tactile pairs from 10,000 unique grasps across 453
-objects**.
+The dataset it produced is **30,000 visual-tactile pairs from 10,000 grasps across 453 objects**.
 
-## Q1. Does the simulation match reality?
+## 1. Fidelity
 
-Tested the direct way: 3D-print five objects, run 20 grasps of each in both simulators and in the real
-world, and count how often the simulated outcome agrees with the real one.
+The direct test: 3D-print five objects, run 20 grasps of each in simulation and in reality, and count
+how often the simulated outcome agrees with the real one.
 
 | Simulator | Agreement with reality |
 | --- | --- |
 | Taxim, rigid-body on PyBullet | 0.73 |
 | Ours, FEM on Taccel | **0.94** |
 
-The failure mode of rigid-body simulation is specific and worth knowing. Rigid-body engines need
-convex decomposition to do collision detection, so an object with complex geometry gets approximated
-by a union of convex pieces. That approximation introduces artifacts precisely at the contact surface,
-which is the one place the answer is decided. Taxim fails hardest on exactly the objects with awkward
-geometry. Modelling gel and object directly sidesteps the decomposition entirely.
+The rigid-body failure has a specific cause. Those engines need convex decomposition for collision
+detection, so an object with awkward geometry is replaced by a union of convex pieces, and the
+artifacts land on the contact surface, the one place the outcome is decided. Taxim fails hardest on
+exactly the objects whose geometry decomposes worst. Solving gel against object directly avoids the
+approximation rather than refining it.
 
-## Q2 and Q3. Does it train better predictors, and does touch matter?
+Fidelity is worth having on its own terms, but it only matters here if it survives into a trained
+model.
 
-Evaluation is on a separate real dataset of **333 open-world grasps**, collected with a hand-held
+## 2 and 3. Transfer, and whether touch earns its place
+
+Testing that needs a set no simulator touched: **333 open-world grasps**, collected with a hand-held
 UMI-based gripper on objects and in environments absent from training.
 
 {{< figure src="images/papers/vitac_results.png" width="760" class="narrow" caption="Accuracy on the open-world test set, mean and one standard deviation over 5 runs. V = vision, T = tactile." >}}
@@ -89,28 +86,19 @@ UMI-based gripper on objects and in environments absent from training.
 | Ours, tactile only | 61%, and unstable |
 | Ours, vision + tactile | **77.5%** |
 
-Three things fall out of this chart.
+Taxim data is synthetic too, and it reaches 62%. Generating data is not the thing that helps;
+generating data whose contact physics is right is. The fidelity result and the transfer result are the
+same result seen twice.
 
-**Real data lands near chance.** Not because the dataset is small or careless, but because open-world
-means the test objects are nothing like the training objects. This is the scaling problem showing up
-as a number.
+The modality rows answer the third question more sharply than we expected. Vision alone, trained on
+our data, scores the same 53% as the real dataset. Touch alone reaches 61% with an error bar spanning
+0.50 to 0.72, which describes a model that sometimes works rather than one that works. Only the pair
+reaches 77.5%, and with the tightest spread of anything we ran. Were touch merely confirming what the
+camera suspected, vision-only would be close behind. It is not close.
 
-**Fidelity is what matters, not synthetic-ness.** Taxim data is synthetic too and only reaches 61%.
-Generating data is not automatically a win. Generating data whose contact physics is right is.
+## Takeaway
 
-**Neither modality gets there alone, and vision is the weaker half.** Trained on our data with vision
-only, the model scores 53%, no better than training on the real dataset. Touch alone reaches 61% but
-with an error bar spanning 0.50 to 0.72 across runs, which is a model that sometimes works rather than
-a model that works. Only the pair reaches 77.5%, and with the tightest spread of anything we ran.
-
-That ordering is the interesting part. If touch were merely confirming what the camera already
-suspected, vision-only would be close behind. It is not close. The information that decides a grasp is
-mostly not in the image.
-
-## What I would keep from this
-
-The intuition worth carrying forward is that the bottleneck was never data volume. It was whether the
-generating process gets contact right. A simulator that is merely fast produces data that trains a
-mediocre predictor; a simulator that models deformation correctly produces data that beats
-hand-collected reality. That is a statement about where to spend effort in synthetic data pipelines
-generally, not only for grasping.
+The bottleneck was never volume. It was whether the process producing the data gets contact right, and
+that is a property you can lose by choosing a faster simulator. Fidelity at the point of contact is
+what a synthetic pipeline is actually buying, here and, I suspect, wherever the label depends on
+physics.
