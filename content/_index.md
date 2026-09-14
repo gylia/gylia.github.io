@@ -29,6 +29,6 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
   </div>
   <div class="card">
     <h3>Data for embodied learning</h3>
-    <p>Language and vision inherited a data paradigm from the web. Embodied learning has no equivalent. What counts as good interaction data, how simulation and real collection divide the work, and how to build a flywheel where deployment feeds the next training set, are all open.</p>
+    <p>Language and vision inherited a data paradigm from the web. Embodied learning has none, though not nothing: pretrained models already carry a usable prior on how the world behaves. What good interaction data is, how to put that prior to work, and how to close a flywheel from deployment back to training, are all open.</p>
   </div>
 </div>
