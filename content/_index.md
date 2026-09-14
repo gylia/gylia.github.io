@@ -25,7 +25,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Embodied intelligence</h3>
-    <p>Architectures carry over from language and vision. Experience does not. I work on where interaction data comes from, and what makes some of it worth more.</p>
+    <p>Recipes from language and vision do not transfer cleanly to acting in the world. I work on both halves of that gap: where interaction data comes from, and the models that learn from it.</p>
   </div>
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
