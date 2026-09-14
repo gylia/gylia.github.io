@@ -16,6 +16,16 @@
     {{ with .Params.code }}<a href="{{ . }}">Code</a>{{ end }}
     {{ with .Params.website }}<a href="{{ . }}">Project page</a>{{ end }}
   </p>
+  {{ with .Params.image }}
+    {{ $i := ($.Resources.GetMatch .) | default (resources.Get .) }}
+    {{ with $i }}
+      {{ $w := .Resize "1400x jpg q86" }}
+      <figure class="pub-figure">
+        <img src="{{ $w.RelPermalink }}" alt="Figure from {{ $.Title }}" loading="lazy">
+        {{ with $.Params.image_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+    {{ end }}
+  {{ end }}
   {{ .Content }}
 </article>
 {{ end }}

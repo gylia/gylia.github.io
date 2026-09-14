@@ -1,23 +1,36 @@
-<div class="pub">
-  <p class="pub-title">
-    {{ $link := or .Params.paper .Params.website .Params.code }}
-    {{ if $link }}<a href="{{ $link }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}
-  </p>
-  <p class="pub-authors">
-    {{- with .Params.authors_before }}{{ . }}{{ end -}}
-    <span class="me">{{ .Params.authors_self }}</span>
-    {{- with .Params.authors_after }}{{ . }}{{ end -}}
-  </p>
-  <p class="pub-meta">
-    {{ with .Params.venue }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Preprint</span>{{ end }}
-    {{ with .Params.venue_note }} · {{ . }}{{ end }}
-    {{ $y := .Date.Format "2006" }}{{ if not (strings.Contains (string .Params.venue) $y) }} · {{ $y }}{{ end }}
-  </p>
-  <p class="pub-links">
-    {{ with .Params.paper }}<a href="{{ . }}">Paper</a>{{ end }}
-    {{ with .Params.code }}<a href="{{ . }}">Code</a>{{ end }}
-    {{ with .Params.website }}<a href="{{ . }}">Project page</a>{{ end }}
-    {{ with .Params.bibtex }}<a href="{{ . }}">BibTeX</a>{{ end }}
-  </p>
-  {{ with .Params.tldr }}<p class="pub-abstract">{{ . }}</p>{{ end }}
+{{ $img := "" }}
+{{ with (or .Params.thumb .Params.image) }}{{ $img = ($.Resources.GetMatch .) | default (resources.Get .) }}{{ end }}
+<div class="pub{{ if $img }} has-thumb{{ end }}">
+  {{ with $img }}
+    {{ $t := .Fill "480x300 Smart jpg q86" }}
+    {{ $t2 := .Fill "960x600 Smart jpg q84" }}
+    {{ $link := or $.Params.website $.Params.paper $.RelPermalink }}
+    <a class="pub-thumb" href="{{ $link }}">
+      <img src="{{ $t.RelPermalink }}" srcset="{{ $t.RelPermalink }} 1x, {{ $t2.RelPermalink }} 2x"
+           alt="Figure from {{ $.Title }}" width="240" height="150" loading="lazy">
+    </a>
+  {{ end }}
+  <div class="pub-body">
+    <p class="pub-title">
+      {{ $l := or .Params.paper .Params.website .Params.code }}
+      {{ if $l }}<a href="{{ $l }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}
+    </p>
+    <p class="pub-authors">
+      {{- with .Params.authors_before }}{{ . }}{{ end -}}
+      <span class="me">{{ .Params.authors_self }}</span>
+      {{- with .Params.authors_after }}{{ . }}{{ end -}}
+    </p>
+    <p class="pub-meta">
+      {{ with .Params.venue }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Preprint</span>{{ end }}
+      {{ with .Params.venue_note }} · {{ . }}{{ end }}
+      {{ $y := .Date.Format "2006" }}{{ if not (strings.Contains (string .Params.venue) $y) }} · {{ $y }}{{ end }}
+    </p>
+    <p class="pub-links">
+      {{ with .Params.paper }}<a href="{{ . }}">Paper</a>{{ end }}
+      {{ with .Params.code }}<a href="{{ . }}">Code</a>{{ end }}
+      {{ with .Params.website }}<a href="{{ . }}">Project page</a>{{ end }}
+      {{ with .Params.bibtex }}<a href="{{ . }}">BibTeX</a>{{ end }}
+    </p>
+    {{ with .Params.tldr }}<p class="pub-abstract">{{ . }}</p>{{ end }}
+  </div>
 </div>
