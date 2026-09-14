@@ -60,6 +60,12 @@ enableEmoji = true
   linkedin = ""
   twitter = ""
 
+[imaging]
+  # Lanczos keeps detail on large downscales; Box (the default) softens badly.
+  resampleFilter = "Lanczos"
+  quality = 92
+  anchor = "Smart"
+
 [markup.goldmark.renderer]
   unsafe = true
 

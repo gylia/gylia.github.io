@@ -1,11 +1,21 @@
 {{ $p := .Site.Params }}
 <aside class="sidebar">
   {{ with resources.Get "images/portrait.jpeg" }}
-    {{ $sm := .Fill "296x296 Center" }}
-    {{ $wp := $sm.Resize "296x296 webp q82" }}
+    {{/* Each tier is deliberately one step larger than the raw DPR needs, so
+         browser zoom (very common) does not outrun the pixels we ship. */}}
+    {{ $j1 := .Fill "296x296 Center q92" }}
+    {{ $j2 := .Fill "444x444 Center q92" }}
+    {{ $j3 := .Fill "592x592 Center q92" }}
+    {{ $w1 := .Fill "296x296 Center webp q90" }}
+    {{ $w2 := .Fill "444x444 Center webp q90" }}
+    {{ $w3 := .Fill "592x592 Center webp q90" }}
     <picture>
-      <source srcset="{{ $wp.RelPermalink }}" type="image/webp">
-      <img class="portrait" src="{{ $sm.RelPermalink }}" alt="Portrait of {{ $p.author }}" width="148" height="148" fetchpriority="high">
+      <source type="image/webp"
+              srcset="{{ $w1.RelPermalink }} 1x, {{ $w2.RelPermalink }} 2x, {{ $w3.RelPermalink }} 3x">
+      <img class="portrait"
+           src="{{ $j2.RelPermalink }}"
+           srcset="{{ $j1.RelPermalink }} 1x, {{ $j2.RelPermalink }} 2x, {{ $j3.RelPermalink }} 3x"
+           alt="Portrait of {{ $p.author }}" width="148" height="148" fetchpriority="high">
     </picture>
   {{ end }}
 
