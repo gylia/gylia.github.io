@@ -22,13 +22,6 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 
 ## Research interests
 
-### Embodied intelligence
-
-Recipes from language and vision do not transfer cleanly to acting in the world. What
-should an agent learn from, and what makes one stream of experience worth
-more than another? What has to be sensed rather than inferred? How much of acting in the world can
-be learned from data that was never collected in it?
-
 <div class="cards">
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
