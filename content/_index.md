@@ -29,7 +29,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
   </div>
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>Vision underdetermines contact. Force, slip and compliance are legible only through touch.</p>
+    <p>A person without sight navigates by touch. A person without touch barely moves. Contact is where manipulation is decided, and vision only guesses at it.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
