@@ -18,7 +18,7 @@ Outside research I am an artist and creator, trained in piano, violin, erhu, bam
 opera, jazz vocals, and dance. I write poetry and theatrical reviews.
 
 I am currently looking for **research internships in embodied AI and multimodal learning**.
-The fastest way to reach me is [email](mailto:gluyang@umich.edu).
+The fastest way to reach me is <a class="js-email" data-u="gluyang" data-d="umich.edu" href="#">email</a>.
 
 ## Research interests
 

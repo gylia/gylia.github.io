@@ -10,6 +10,14 @@
     </main>
   </div>
   <script>
+    // Addresses are split in the markup so scrapers do not find one to harvest.
+    (function () {
+      document.querySelectorAll('.js-email').forEach(function (a) {
+        var addr = a.dataset.u + String.fromCharCode(64) + a.dataset.d;
+        a.href = 'mailto:' + addr;
+        if (a.dataset.show === 'addr') a.textContent = addr;
+      });
+    })();
     (function () {
       var btn = document.querySelector('.theme-toggle');
       if (!btn) return;

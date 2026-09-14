@@ -51,7 +51,9 @@ enableEmoji = true
   author = "Gan Luyang"
   headshot = "/images/headshot_7.jpeg"
   location = "Ann Arbor, Michigan"
-  email = "gluyang@umich.edu"
+  # Split so the address never appears intact in the rendered HTML.
+  email_user = "gluyang"
+  email_domain = "umich.edu"
   github = "https://github.com/gylia"
   scholar = "https://scholar.google.com/citations?user=4XWyA_cAAAAJ&hl=en"
   # Optional: add your handles to show these links.

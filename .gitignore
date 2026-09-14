@@ -6,3 +6,6 @@ resources/
 
 # Local paper drafts at the repo root, never published.
 /*.pdf
+
+# Original photos, kept locally only
+photos/
