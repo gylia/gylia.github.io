@@ -10,7 +10,6 @@ paper = "https://arxiv.org/abs/2406.11793"
 code = "https://github.com/princeton-vl/FetchBench-CORL2024"
 website = ""
 image = "images/papers/fetchbench.png"
-thumb = "images/papers/fetchbench_thumb.png"
 image_caption = "Fetching tasks in the benchmark. The red object must be retrieved from clutter. Scenes are generated procedurally and rendered in Isaac Sim."
 tldr = "A simulation benchmark for robot fetching: reaching into cluttered scenes and retrieving a target object, evaluated end to end."
 +++

@@ -149,7 +149,7 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 .pub { padding: 1.15rem 0; border-bottom: 1px solid var(--rule); }
 .pub.has-thumb { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 1.4rem; align-items: start; }
 .pub-thumb { display: block; border-radius: 5px; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
-.pub-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; }
+.pub-thumb img { display: block; width: 100%; height: auto; }
 .pub-thumb:hover { border-color: var(--accent); }
 .pub-figure { margin: 0 0 1.5rem; }
 .pub-figure img { width: 100%; border-radius: 6px; border: 1px solid var(--rule); display: block; }

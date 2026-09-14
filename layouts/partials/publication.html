@@ -2,12 +2,12 @@
 {{ with (or .Params.thumb .Params.image) }}{{ $img = ($.Resources.GetMatch .) | default (resources.Get .) }}{{ end }}
 <div class="pub{{ if $img }} has-thumb{{ end }}">
   {{ with $img }}
-    {{ $t := .Fill "480x300 Smart jpg q86" }}
-    {{ $t2 := .Fill "960x600 Smart jpg q84" }}
+    {{ $t := .Fit "440x360 jpg q86" }}
+    {{ $t2 := .Fit "880x720 jpg q84" }}
     {{ $link := or $.Params.website $.Params.paper $.RelPermalink }}
     <a class="pub-thumb" href="{{ $link }}">
       <img src="{{ $t.RelPermalink }}" srcset="{{ $t.RelPermalink }} 1x, {{ $t2.RelPermalink }} 2x"
-           alt="Figure from {{ $.Title }}" width="240" height="150" loading="lazy">
+           alt="Figure from {{ $.Title }}" loading="lazy">
     </a>
   {{ end }}
   <div class="pub-body">

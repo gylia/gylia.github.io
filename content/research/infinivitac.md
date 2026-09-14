@@ -11,8 +11,7 @@ paper = ""
 code = ""
 website = ""
 image = "images/papers/vitac.png"
-thumb = "images/papers/vitac_thumb.png"
-image_caption = "Paired visual and tactile observations for grasps that held and grasps that failed."
+image_caption = "Left two columns: grasps that held. Right two columns: grasps that failed. Rows are the real evaluation set, our synthetic training data, synthetic data from Taxim, and real training data."
 tldr = "Predicting whether a grasp will hold, from vision and touch together, trained on synthetic data so that it generalizes to objects never seen during training."
 +++
 
