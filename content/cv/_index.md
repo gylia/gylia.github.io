@@ -9,14 +9,14 @@ description = "Education, research, publications, and service."
 ## Education
 
 <div class="entry">
-  <div class="when">2025 –</div>
+  <div class="when">2026 –</div>
   <div class="what">
     <strong>University of Michigan</strong>
     <div class="where">Graduate study, Computer Science and Engineering</div>
   </div>
 </div>
 <div class="entry">
-  <div class="when">– 2025</div>
+  <div class="when">– 2026</div>
   <div class="what">
     <strong>Princeton University</strong>
     <div class="where">B.A. in Mathematics</div>
@@ -47,19 +47,30 @@ description = "Education, research, publications, and service."
 
 See the [research page](/research/) for the full list.
 
+## Honors
+
+<div class="entry">
+  <div class="when">2026</div>
+  <div class="what">
+    <strong>Elected to Sigma Xi</strong>
+    <div class="where">Princeton University</div>
+    <p class="detail">The scientific research honor society; election awarded at graduation.</p>
+  </div>
+</div>
+
 ## Service &amp; Activities
 
 <div class="entry">
   <div class="when"></div>
   <div class="what">
-    <strong>Volunteer, Women and Mathematics Program</strong>
+    <strong>Local host, Women and Mathematics Program</strong>
     <div class="where">Institute for Advanced Study, Princeton</div>
   </div>
 </div>
 <div class="entry">
   <div class="when">2024</div>
   <div class="what">
-    <strong>Attendee, Conference on Robot Learning (CoRL)</strong>
+    <strong>Poster presentation, Conference on Robot Learning (CoRL)</strong>
     <div class="where">Munich, Germany</div>
   </div>
 </div>

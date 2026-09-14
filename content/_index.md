@@ -3,7 +3,7 @@ title = "About"
 date = 2026-09-13
 +++
 
-I am a graduate student in **Computer Science and Engineering at the University of Michigan**.
+I am a first-year graduate student in **Computer Science and Engineering at the University of Michigan**.
 I received my **B.A. in Mathematics from Princeton University**, where I was fortunate to work with
 Prof. [Jia Deng](https://pvl.cs.princeton.edu/), Prof. [Zhuang Liu](https://liuzhuang13.github.io/),
 Prof. [Marc Aurèle Gilles](https://ma-gilles.github.io/), and Prof. [Boris Hanin](https://boris-hanin.github.io/).
@@ -28,7 +28,7 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
     <p>Robotic manipulation and grasping, benchmarks that measure what policies can actually do in the world.</p>
   </div>
   <div class="card">
-    <h3>Tactile &amp; multimodal sensing</h3>
+    <h3>Tactile &amp; multimodal perception</h3>
     <p>Combining vision and touch to predict physical outcomes such as grasp stability in open-world settings.</p>
   </div>
   <div class="card">
