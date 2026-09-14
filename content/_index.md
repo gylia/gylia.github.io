@@ -25,18 +25,18 @@ The fastest way to reach me is [email](mailto:gluyang@umich.edu).
 <div class="cards">
   <div class="card">
     <h3>Embodied intelligence</h3>
-    <p>Robotic manipulation and grasping, benchmarks that measure what policies can actually do in the world.</p>
+    <p>Architectures carry over from language and vision; the supply of experience does not. I am most interested in where interaction data comes from, what makes some of it worth more than the rest, and which learning signals turn it into competence that survives outside the training distribution.</p>
   </div>
   <div class="card">
     <h3>Tactile &amp; multimodal perception</h3>
-    <p>Combining vision and touch to predict physical outcomes such as grasp stability in open-world settings.</p>
+    <p>Vision underdetermines contact: force, slip, and compliance become legible only through touch. An agent that acts on the physical world needs senses that report what contact does, not only what it looks like.</p>
   </div>
   <div class="card">
     <h3>Sim-to-real &amp; synthetic data</h3>
-    <p>Physical simulation and large-scale synthetic data generation as a substitute for scarce real-world supervision.</p>
+    <p>Real interaction data is bounded by how many hours a robot can spend touching things. Simulation lifts that bound, which turns the question into which properties of generated data actually transfer — physical fidelity, the distribution over contact events, sheer diversity — rather than how much of it there is.</p>
   </div>
   <div class="card">
     <h3>Theory of deep learning</h3>
-    <p>Critical batch size and scaling laws, statistical inference, and spectral methods in high dimensions.</p>
+    <p>Scaling is mostly navigated by search: batch sizes and budgets are found empirically and passed along as folklore. Some of it has analyzable structure — critical batch size, spectral behaviour in high dimensions — and I am drawn to the parts that can be predicted rather than tuned.</p>
   </div>
 </div>
