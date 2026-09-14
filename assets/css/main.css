@@ -190,6 +190,12 @@ blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0 0; padding: 0; list-style: none; }
 .tags li { font-size: .78rem; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: .15rem .6rem; }
 
+/* ---------- inline figures ---------- */
+.inline-figure { margin: 1.6rem 0; max-width: 100%; }
+.inline-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 5px; background: #fff; }
+.inline-figure figcaption { font-size: .84rem; color: var(--faint); margin-top: .5rem; line-height: 1.5; }
+.inline-figure.narrow { max-width: 27rem; }
+
 /* ---------- tables ---------- */
 .prose table { border-collapse: collapse; font-size: .92rem; margin: 1.3rem 0; min-width: 22rem; }
 .prose table th, .prose table td { text-align: left; padding: .45rem .95rem .45rem 0; border-bottom: 1px solid var(--rule); }

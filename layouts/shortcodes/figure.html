@@ -1,0 +1,9 @@
+{{ $src := .Get "src" }}
+{{ $img := resources.Get $src }}
+{{ with $img }}
+  {{ $w := .Resize (printf "%sx jpg q88" (default "900" ($.Get "width"))) }}
+  <figure class="inline-figure{{ with $.Get "class" }} {{ . }}{{ end }}">
+    <img src="{{ $w.RelPermalink }}" alt="{{ $.Get "alt" | default ($.Get "caption") }}" loading="lazy">
+    {{ with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
+{{ end }}
