@@ -25,11 +25,11 @@
       {{ $y := .Date.Format "2006" }}{{ if not (strings.Contains (string .Params.venue) $y) }} · {{ $y }}{{ end }}
     </p>
     <p class="pub-links">
-      <a href="{{ .RelPermalink }}" class="pub-blog">Blog</a>
       {{ with .Params.paper }}<a href="{{ . }}">Paper</a>{{ end }}
       {{ with .Params.code }}<a href="{{ . }}">Code</a>{{ end }}
       {{ with .Params.website }}<a href="{{ . }}">Project page</a>{{ end }}
       {{ with .Params.bibtex }}<a href="{{ . }}">BibTeX</a>{{ end }}
+      <a href="{{ .RelPermalink }}">Blog</a>
     </p>
     {{ with .Params.tldr }}<p class="pub-abstract">{{ . }}</p>{{ end }}
   </div>
