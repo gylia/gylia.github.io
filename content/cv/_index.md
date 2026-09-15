@@ -81,7 +81,7 @@ See the [research page](/research/) for the full list with figures and write-ups
   <div class="when">2026</div>
   <div class="what">
     <strong>Elected member, Sigma Xi</strong>
-    <div class="where">The Scientific Research Honor Society, elected by Princeton upon graduation</div>
+    <div class="where">The Scientific Research Honor Society, elected by the Princeton mathematics department upon graduation</div>
   </div>
 </div>
 
