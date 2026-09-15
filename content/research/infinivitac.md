@@ -1,6 +1,6 @@
 +++
 title = "Learning Open-World Visual–Tactile Grasp Stability Prediction with Synthetic Data"
-date = 2026-01-01
+date = 2025-09-01
 draft = false
 venue = "Manuscript"
 authors_before = "Beining Han*, "
