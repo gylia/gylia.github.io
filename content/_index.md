@@ -9,7 +9,7 @@ Prof. [Jia Deng](https://pvl.cs.princeton.edu/), Prof. [Zhuang Liu](https://liuz
 Prof. [Marc Aurèle Gilles](https://ma-gilles.github.io/), and Prof. [Boris Hanin](https://boris-hanin.github.io/).
 I was also fortunate to learn from Prof. [Charles Fefferman](https://en.wikipedia.org/wiki/Charles_Fefferman)
 and Prof. [Amit Singer](https://web.math.princeton.edu/~amits/), who greatly changed how I understand mathematics
-and scholarship.
+and intellectual life.
 
 My research spans **embodied intelligence and multimodal learning**. I have worked on robotic
 manipulation, tactile sensing, and sim-to-real transfer (including physical simulation and synthetic
