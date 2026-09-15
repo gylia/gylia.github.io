@@ -45,7 +45,8 @@ Generating the data instead raises three questions.
 ## The simulator
 
 Prior synthetic tactile data comes from rigid-body engines. We use FEM instead, on
-[Taccel](https://arxiv.org/abs/2504.12908), which is built on the IPC contact framework, because the
+[Taccel](https://arxiv.org/abs/2504.12908), which is built on the [IPC](https://ipc-sim.github.io/) contact
+framework, because the
 quantity we need to get right is the deformation of a soft gel against a rigid object.
 
 The gripper is reduced to what matters: two tetrahedral FEM bodies, 2.5 × 2 × 0.4 cm, standing in for
@@ -91,8 +92,8 @@ tuned against real readings.
 
 ### Objects, textures and light
 
-Meshes and grasp poses come from ACRONYM, which supplies neither texture nor physical properties. We
-prompt GPT-4o for a plausible texture type from the object category, generate the UV map with Paint3D,
+Meshes and grasp poses come from [ACRONYM](https://arxiv.org/abs/2011.09584), which supplies neither texture nor physical properties. We
+prompt GPT-4o for a plausible texture type from the object category, generate the UV map with [Paint3D](https://arxiv.org/abs/2312.13913),
 and prompt GPT-4o again for mass and friction given category, dimensions and texture.
 
 Visual frames are ray-traced in IsaacSim Replicator with the full gripper geometry reconstructed from
@@ -108,21 +109,23 @@ toward easy categories such as mugs, so the training set is resampled to balance
 
 ## The real data
 
-No open-world visual-tactile grasping dataset existed, so we built the rig and collected one.
+No open-world visual-tactile grasping dataset existed, so we built the rig and collected one. Its
+mechanics are based on the [UMI](https://arxiv.org/abs/2402.10329) gripper, with the fingers modified
+to carry the tactile sensors.
 
 {{< figure src="images/papers/vitac_gripper.jpg" width="620" class="narrow" caption="The hand-held gripper: UMI mechanics, two GelSight Mini sensors on modified fingers, and a RealSense D435 centred for a symmetric view." >}}
 
 Because a person actuates it, data can be collected anywhere, at whatever grip force a hand happens to
 apply, which is the point.
 
-**Open-world set.** 60 everyday objects, some from YCB, deliberately including transparent and
+**Open-world set.** 60 everyday objects, some from [YCB](https://arxiv.org/abs/1502.03143), deliberately including transparent and
 reflective ones such as glasses and forks, across 10 real scenes: classrooms, kitchens, offices. The
 operator picks a grasp, squeezes, saves the frame before lifting, then lifts and records the outcome.
 **333 grasps, 163 failures and 170 successes**, split 67 for validation and 266 for test.
 
 {{< figure src="images/papers/vitac_objects.png" width="760" caption="The open-world object set. Transparent and reflective items are included on purpose: they are where vision is least reliable." >}}
 
-**Grasp-annotated set.** Five 3D-printed objects with deliberately awkward geometry, some from EGAD,
+**Grasp-annotated set.** Five 3D-printed objects with deliberately awkward geometry, some from [EGAD](https://arxiv.org/abs/2003.01314),
 the kind usually called adversarial for grasping. 20 grasps each, with ground-truth grasp poses
 recovered from ArUco markers on a board and on the gripper. This set exists to compare simulators,
 which needs the grasp pose known exactly.
@@ -136,7 +139,7 @@ reported.
 
 | Simulator | B1 | B4 | C2 | C4 | ORG | Avg |
 | --- | --- | --- | --- | --- | --- | --- |
-| Taxim, rigid-body on PyBullet | 0.55 | 0.85 | 0.95 | 0.65 | 0.65 | 0.73 |
+| [Taxim](https://arxiv.org/abs/2109.04027), rigid-body on PyBullet | 0.55 | 0.85 | 0.95 | 0.65 | 0.65 | 0.73 |
 | Ours, FEM on Taccel | 0.90 | 1.00 | 0.95 | 0.90 | 0.95 | **0.94** |
 
 The failures cluster on B1, C4 and ORG, the three most awkward shapes, and there are two reasons.
@@ -160,7 +163,7 @@ images and one 240 × 320 RGB frame each go through a 4-layer CNN with BatchNorm
 embeddings; the three are concatenated and read out by a 2-layer MLP with a sigmoid. Adam at 3 × 10⁻⁴,
 five seeds, checkpoint chosen on validation accuracy, evaluated on the held-out real test set.
 
-Two baselines. **Real** is the Calandra et al. dataset: 9.2k grasps over 106 objects, collected on a
+Two baselines. **Real** is the [Calandra et al.](https://arxiv.org/abs/1805.11085) dataset: 9.2k grasps over 106 objects, collected on a
 Sawyer mount with a different GelSight model and a third-person camera. **Taxim** is a synthetic set
 built to be as close to ours as possible, same objects, physical properties, textures, backgrounds,
 grasp poses and balancing, differing only in the simulator and tactile renderer, at 33k+ pairs from
@@ -171,7 +174,7 @@ grasp poses and balancing, differing only in the simulator and tactile renderer,
 | Training data | Accuracy |
 | --- | --- |
 | Real dataset, vision + tactile | 53% |
-| Taxim synthetic, vision + tactile | 62% |
+| Taxim synthetic, vision + tactile | 61% |
 | Ours, vision only | 53.2% |
 | Ours, tactile only | 61.1%, and unstable |
 | Ours, vision + tactile | **77.5%** |
@@ -180,7 +183,7 @@ grasp poses and balancing, differing only in the simulator and tactile renderer,
 one sensor, one camera angle, one object set, and open-world test objects fall outside all of them.
 The distribution shift, not the sample count, is what costs the accuracy.
 
-**Taxim is synthetic too, and reaches 62%.** Generating data is not what helps. Generating data whose
+**Taxim is synthetic too, and reaches 61%.** Generating data is not what helps. Generating data whose
 contact physics is right is. The fidelity result and the transfer result are the same result seen
 twice.
 
@@ -198,8 +201,7 @@ which are proxies for mass and friction, and the prediction needs both.
 
 The bottleneck was never volume. It was whether the process producing the data gets contact right, and
 that is a property you can lose by choosing a faster simulator. Fidelity at the point of contact is
-what a synthetic pipeline is actually buying, here and, I suspect, wherever the label depends on
-physics.
+what this synthetic pipeline was actually buying.
 
 The honest limitation is that all of this is one gripper, two GelSight Minis, and a parallel-jaw
 geometry. The claim that synthetic data transfers better than real data is established here for that
