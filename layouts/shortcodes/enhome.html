@@ -1,0 +1,5 @@
+{{- /* English home URL. A plain "/" in content gets the language prefix
+       prepended for non-default languages, which points zh back at itself. */ -}}
+{{- range .Site.Home.AllTranslations -}}
+  {{- if eq .Language.Lang "en" }}{{ .RelPermalink }}{{ end -}}
+{{- end -}}

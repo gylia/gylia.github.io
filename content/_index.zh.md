@@ -16,4 +16,4 @@ date = 2026-09-13
 研究之外，我是一名创作者，学习过钢琴、小提琴、二胡、竹笛、京剧、爵士声乐与舞蹈，
 并写作诗歌与剧评。
 
-完整的论文列表与简历请见[英文页面](/)。联系方式：<a class="js-email" data-u="gluyang" data-d="umich.edu" data-show="addr" href="#">gluyang [at] umich.edu</a>。
+完整的论文列表与简历请见<a href="{{< enhome >}}">英文页面</a>。联系方式：<a class="js-email" data-u="gluyang" data-d="umich.edu" data-show="addr" href="#">gluyang [at] umich.edu</a>。
