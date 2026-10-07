@@ -9,3 +9,10 @@ resources/
 
 # Original photos, kept locally only
 photos/
+
+# iCloud sync artifacts. iCloud duplicates files as "name 2.ext" and leaves
+# .icloud placeholders; three of these were committed by accident once.
+# Note the second pattern also ignores any file you deliberately name
+# "something 2.ext", so rename rather than fight it.
+*.icloud
+* [0-9].*
