@@ -3,7 +3,7 @@ title = "关于"
 date = 2026-09-13
 +++
 
-我是**密歇根大学计算机科学与工程系**的研究生，本科毕业于**普林斯顿大学数学系**。
+我是**密歇根大学计算机科学与工程系**的硕士研究生，本科毕业于**普林斯顿大学数学系**。
 在普林斯顿期间，我有幸与 [Jia Deng](https://pvl.cs.princeton.edu/) 教授、
 [Zhuang Liu](https://liuzhuang13.github.io/) 教授、
 [Marc Aurèle Gilles](https://ma-gilles.github.io/) 教授

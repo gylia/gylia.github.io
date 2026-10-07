@@ -3,7 +3,7 @@ title = "About"
 date = 2026-09-13
 +++
 
-I am a first-year graduate student in **Computer Science and Engineering at the University of Michigan**.
+I am a first-year master's student in **Computer Science and Engineering at the University of Michigan**.
 I received my **B.A. in Mathematics from Princeton University**, where I was fortunate to work with
 Prof. [Jia Deng](https://pvl.cs.princeton.edu/), Prof. [Zhuang Liu](https://liuzhuang13.github.io/),
 Prof. [Marc Aurèle Gilles](https://ma-gilles.github.io/), and Prof. [Boris Hanin](https://boris-hanin.github.io/).
