@@ -10,14 +10,14 @@ description = "Education, research, publications, and service."
   <div class="when">2026 – 2028</div>
   <div class="what">
     <strong>University of Michigan</strong>
-    <div class="where">MS in Computer Science and Engineering, expected May 2028</div>
+    <div class="where">M.S. in Computer Science and Engineering, expected May 2028</div>
   </div>
 </div>
 <div class="entry">
   <div class="when">2022 – 2026</div>
   <div class="what">
     <strong>Princeton University</strong>
-    <div class="where">BA in Mathematics, minor in Computer Science</div>
+    <div class="where">B.A. in Mathematics, minor in Computer Science</div>
     <p class="detail">Departmental GPA 3.95/4.0.</p>
   </div>
 </div>
