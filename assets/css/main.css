@@ -41,7 +41,17 @@
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Reserve the scrollbar track on every page. Without it, a page that
+     scrolls is 15px narrower than one that does not, and the centred
+     layout jumps sideways as you move between them. */
+  scrollbar-gutter: stable;
+}
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
 body {
   margin: 0;
   background: var(--bg);
