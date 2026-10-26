@@ -1,8 +1,12 @@
-+++
-title = "Arts & Aesthetics"
-date = 2026-09-13
-description = "Music, poetry, and writing on theatre by Gan Luyang."
-+++
+Parked on 2026-10-26. This was the body of the Arts & Aesthetics page,
+before it was renamed to Atelier and reduced to a placeholder.
+To restore, paste the text below back under the front matter of
+content/atelier/_index.md.
+
+Nothing under drafts/ is published: Hugo only builds content/.
+
+---
+
 
 I was trained as a musician before I was trained as a researcher, and I have never treated the two as
 separate lives. Both are attempts to find structure in something that resists it.
