@@ -1,0 +1,31 @@
+{
+  "name": "gylia.github.io",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+  "postCreateCommand": "bash .devcontainer/install-hugo.sh",
+  "postAttachCommand": "bash .devcontainer/start-preview.sh",
+
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Site preview",
+      "onAutoForward": "openPreview",
+      "visibility": "private"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "editor.wordWrap": "on",
+        "editor.rulers": [100],
+        "files.trimTrailingWhitespace": true,
+        "[markdown]": { "editor.quickSuggestions": { "other": true } }
+      }
+    }
+  }
+}
