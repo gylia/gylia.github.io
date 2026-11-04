@@ -1,0 +1,13 @@
+{{- /* Collapsible block.
+       {{< fold "Summary text" >}} body {{< /fold >}}
+       {{< fold "Summary text" "open" >}} starts expanded.
+       Hugo forbids mixing positional and named parameters in one call, so
+       the second positional slot carries the open flag. */ -}}
+{{- $title := or (.Get 0) (.Get "title") "Details" -}}
+{{- $open := or (eq (.Get 1) "open") (eq (.Get "open") "true") -}}
+<details class="fold"{{ if $open }} open{{ end }}>
+  <summary>{{ $title }}</summary>
+  <div class="fold-body">
+{{ .Inner | markdownify }}
+  </div>
+</details>

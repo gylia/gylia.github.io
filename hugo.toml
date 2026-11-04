@@ -65,6 +65,20 @@ enableEmoji = true
   quality = 92
   anchor = "Smart"
 
+[markup.highlight]
+  # Emit classes instead of inline styles so code blocks follow the site theme.
+  noClasses = false
+  lineNos = false
+  tabWidth = 2
+
+[markup.goldmark.extensions.passthrough]
+  # Lets $...$ and $$...$$ survive Markdown so the render hook can turn
+  # them into MathML at build time.
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\\[', '\\]'], ['$$', '$$']]
+    inline = [['\\(', '\\)'], ['$', '$']]
+
 [markup.goldmark.renderer]
   unsafe = true
 

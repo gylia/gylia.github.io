@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</div>
+
+{{ $notes := .Pages.ByDate.Reverse }}
+{{ if $notes }}
+<div class="note-list">
+  {{ range $notes }}
+  <div class="note-item">
+    <a class="note-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="note-meta">
+      <span>{{ .Date.Format "2 Jan 2006" }}</span>
+      {{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}
+      {{ if .Draft }} · <span class="note-draft">draft</span>{{ end }}
+    </div>
+    {{ with .Params.summary }}<p class="note-summary">{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}

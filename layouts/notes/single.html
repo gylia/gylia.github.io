@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="prose note">
+  <a class="back" href="{{ .Parent.RelPermalink }}">← Notes</a>
+  <h1>{{ .Title }}</h1>
+  <p class="note-meta">
+    {{ .Date.Format "2 January 2006" }}
+    {{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}
+    {{ if .Draft }} · <span class="note-draft">draft</span>{{ end }}
+  </p>
+
+  {{ if and (.Params.toc | default true) (gt (len .TableOfContents) 60) }}
+  <nav class="toc">
+    <p class="toc-head">Contents</p>
+    {{ .TableOfContents }}
+  </nav>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+{{ end }}
